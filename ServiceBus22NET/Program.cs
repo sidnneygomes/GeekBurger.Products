@@ -3,7 +3,8 @@
 using Microsoft.Azure.ServiceBus;
 using System.Text;
 
-const string QueueConnectionString = "Endpoint=sb://geekburguer22.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=wLXla8SzHdd9ZhKyxa2XXhpcw3x2c3Biu+ASbPknjoA=";
+//const string QueueConnectionString = "Endpoint=sb://geekburguer22.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=wLXla8SzHdd9ZhKyxa2XXhpcw3x2c3Biu+ASbPknjoA=";
+const string QueueConnectionString = "Endpoint=sb://servicebussidney.servicebus.windows.net/;SharedAccessKeyName=ProductPolicy;SharedAccessKey=pfzTDEltzZou0npm/C1tAgi8arVMuQjy6+ASbM1KbXw=";
 const string QueuePath = "ProductChanged";
 IQueueClient _queueClient;
 
