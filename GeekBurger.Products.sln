@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBurger.Products.Contrac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBus22NET", "ServiceBus22NET\ServiceBus22NET.csproj", "{BC528946-4F5C-4B58-9970-3DA926B52294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBurger.Service.Contract", "GeekBurger.Service.Contract\GeekBurger.Service.Contract.csproj", "{03B5C096-E6C7-4A02-BA17-6D9ECA0ABB7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekBurger.Service.Contract", "GeekBurger.Service.Contract\GeekBurger.Service.Contract.csproj", "{03B5C096-E6C7-4A02-BA17-6D9ECA0ABB7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusTopic", "ServiceBusTopic\ServiceBusTopic.csproj", "{224C826B-D700-491D-BA7D-4EF89B393538}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{03B5C096-E6C7-4A02-BA17-6D9ECA0ABB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03B5C096-E6C7-4A02-BA17-6D9ECA0ABB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03B5C096-E6C7-4A02-BA17-6D9ECA0ABB7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224C826B-D700-491D-BA7D-4EF89B393538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224C826B-D700-491D-BA7D-4EF89B393538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224C826B-D700-491D-BA7D-4EF89B393538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224C826B-D700-491D-BA7D-4EF89B393538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
