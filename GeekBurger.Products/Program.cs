@@ -1,9 +1,26 @@
+using AutoMapper;
+using GeekBurger.Products.Extension;
+using GeekBurger.Products.Repository;
+using GeekBurger.Products.Repository.Interface;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder.Services.AddDbContext<ProductsDbContext>(o => o.UseInMemoryDatabase("geekburger-products"));
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
+builder.Services.AddScoped<IStoreRepository, StoreRepository>();
+builder.Services.AddScoped<IProductChangedEventRepository, ProductChangedEventRepository>();
+
 var app = builder.Build();
+var scope = app.Services.CreateScope();
+var productsDbContext = scope.ServiceProvider.GetRequiredService<ProductsDbContext>();
+productsDbContext.Seed();
 
 var mvcCoreBuilder = builder.Services.AddMvcCore();
 
@@ -11,7 +28,6 @@ mvcCoreBuilder
     .AddFormatterMappings()
     //.AddJsonFormatters()
     .AddCors();
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment()) {
@@ -32,4 +48,3 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Products}/{id?}");
 
 app.Run();
-
