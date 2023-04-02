@@ -79,9 +79,7 @@ namespace GeekBurger.Products.Controllers {
             var product = _mapper.Map<Product>(productToAdd);
 
             if (product.StoreId == Guid.Empty)
-                return new
-
-            Helper.UnprocessableEntityResult(ModelState);
+                return new Helper.UnprocessableEntityResult(ModelState);
 
             _productsRepository.Add(product);
             _productsRepository.Save();

@@ -7,11 +7,14 @@ namespace GeekBurger.Products.Repository {
     public class ProductsRepository : IProductsRepository {
 
         private ProductsDbContext _dbContext;
-        private IProductChangedService _productChangedService;
+        //private IProductChangedService _productChangedService;
 
-        public ProductsRepository(ProductsDbContext dbContext, IProductChangedService productChangedService) {
+        public ProductsRepository(ProductsDbContext dbContext
+                                    //, IProductChangedService productChangedService
+                                    ) 
+        {
             _dbContext = dbContext;
-            _productChangedService = productChangedService;
+            //_productChangedService = productChangedService;
         }
 
         public Product GetProductById(Guid productId) {
@@ -49,11 +52,11 @@ namespace GeekBurger.Products.Repository {
         }
 
         public void Save() {
-            _productChangedService.AddToMessageList(_dbContext.ChangeTracker.Entries<Product>());
+            //_productChangedService.AddToMessageList(_dbContext.ChangeTracker.Entries<Product>());
 
             _dbContext.SaveChanges();
 
-            _productChangedService.SendMessagesAsync();
+            //_productChangedService.SendMessagesAsync();
         }
 
     }

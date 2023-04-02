@@ -3,21 +3,36 @@ using GeekBurger.Products.Extension;
 using GeekBurger.Products.Repository;
 using GeekBurger.Products.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json")
+    .AddEnvironmentVariables();
+
+if (builder.Environment.IsDevelopment())
+    builder.Configuration.AddUserSecrets<Program>();
+
 // Add services to the container.
-//builder.Services.AddDbContext<ProductsDbContext>(o => o.UseInMemoryDatabase("geekburger-products"));
+builder.Services.AddDbContext<ProductsDbContext>(o => o.UseInMemoryDatabase("geekburger-products"));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Products", Version = "v1" });
+});
 
 builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 builder.Services.AddScoped<IStoreRepository, StoreRepository>();
 builder.Services.AddScoped<IProductChangedEventRepository, ProductChangedEventRepository>();
 
 var app = builder.Build();
+
 var scope = app.Services.CreateScope();
 var productsDbContext = scope.ServiceProvider.GetRequiredService<ProductsDbContext>();
 productsDbContext.Seed();
@@ -28,8 +43,6 @@ mvcCoreBuilder
     .AddFormatterMappings()
     //.AddJsonFormatters()
     .AddCors();
-
-builder.Services.AddSwaggerGen();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment()) {

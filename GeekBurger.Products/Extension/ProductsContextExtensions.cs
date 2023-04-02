@@ -1,9 +1,9 @@
 ﻿using GeekBurger.Products.Model;
 using GeekBurger.Products.Repository;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
-namespace GeekBurger.Products.Extension {
+namespace GeekBurger.Products.Extension
+{
     public static class ProductsContextExtensions {
         public static void Seed(this ProductsDbContext dbContext) {
 
@@ -25,11 +25,9 @@ namespace GeekBurger.Products.Extension {
                     }
                 });
 
-            var productsTxt = File.ReadAllText("products.json");
-            var products = JsonConvert.DeserializeObject<List<Product>>(productsTxt);
-            dbContext.Products.AddRange(products);
-
-
+            //var productsTxt = File.ReadAllText("products.json");
+            //var products = JsonConvert.DeserializeObject<List<Product>>(productsTxt);
+            //dbContext.Products.AddRange(products);
             dbContext.SaveChanges();
         }
     }

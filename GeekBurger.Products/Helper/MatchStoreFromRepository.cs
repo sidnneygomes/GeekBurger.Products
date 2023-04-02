@@ -4,7 +4,8 @@ using GeekBurger.Products.Model;
 using GeekBurger.Products.Repository;
 
 namespace GeekBurger.Products {
-    public class MatchStoreFromRepository : IMappingAction<ProductToUpsert, Product> {
+    public class MatchStoreFromRepository : IMappingAction<ProductToUpsert, Product> 
+    {
         private IStoreRepository _storeRepository;
         public MatchStoreFromRepository(IStoreRepository storeRepository) {
             _storeRepository = storeRepository;
