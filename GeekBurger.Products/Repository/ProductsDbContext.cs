@@ -1,5 +1,7 @@
-﻿using GeekBurger.Products.Models;
+﻿using GeekBurger.Products.Model;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+
 
 namespace GeekBurger.Products.Repository {
     public class ProductsDbContext : DbContext {
@@ -11,7 +13,7 @@ namespace GeekBurger.Products.Repository {
         public DbSet<Store> Stores { get; set; }
 
         public DbSet<Item> Items { get; set; }
-
+        public DbSet<ProductChangedEvent> ProductChangedEvents { get; set; }
     }
 
 }

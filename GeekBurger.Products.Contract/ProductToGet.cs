@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeekBurger.Products.Contract
-{
-    public class Product {
-        public string StoreName { get; set; }
+namespace GeekBurger.Products.Contract {
+    public class ProductToGet {
+        public Guid StoreId { get; set; }
         public Guid ProductId { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
-        public List<Item> Items { get; set; }
+        public List<ItemToGet> Items { get; set; }
         public decimal Price { get; set; }
     }
 

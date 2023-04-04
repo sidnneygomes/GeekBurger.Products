@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeekBurger.Products.Contract
-{
-    public class Item {
+namespace GeekBurger.Products.Contract {
+    public class ItemToGet {
         public Guid ItemId { get; set; }
         public string Name { get; set; }
     }

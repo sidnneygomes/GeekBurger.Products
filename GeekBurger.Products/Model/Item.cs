@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GeekBurger.Products.Models
+namespace GeekBurger.Products.Model
 {
     public class Item
     {
@@ -12,4 +13,5 @@ namespace GeekBurger.Products.Models
         public Product Product { get; set; }
     }
 
+    }
 }
