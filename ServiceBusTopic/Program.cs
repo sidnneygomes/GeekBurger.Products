@@ -88,8 +88,7 @@ async void ReceiveMessages(ServiceBusConfiguration serviceBusConfiguration)
 }
 
 
-static Task MessageHandler(Message message,
-   CancellationToken arg2)
+static Task MessageHandler(Message message,CancellationToken arg2)
 {
     Console.WriteLine($"message Label: {message.Label}");
     Console.WriteLine($"CorrelationId: {message.CorrelationId}");
