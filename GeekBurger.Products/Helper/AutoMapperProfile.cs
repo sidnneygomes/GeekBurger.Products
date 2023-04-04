@@ -1,17 +1,15 @@
 ﻿using AutoMapper;
 using GeekBurger.Products.Contract;
-using GeekBurger.Products.Models;
-using GeekBurger.Service.Contract;
+using GeekBurger.Products.Model;
 
-namespace GeekBurger.Products.Helper {
-    public class AutoMapperProfile : Profile {
-        public AutoMapperProfile() {
-            CreateMap<Contract.Product, ProductToGet>();
-            CreateMap<Contract.Item, ItemToGet>();
-            CreateMap<ProductToUpsert, Contract.Product>()
-                .AfterMap<MatchStoreFromRepository>();
-            CreateMap<Contract.ItemToUpsert, Contract.Item>()
-                .AfterMap<MatchItemsFromRepository>();
+namespace GeekBurger.Products {
+    public class AutomapperProfile : Profile {
+        public AutomapperProfile() {
+
+            CreateMap<Product, ProductToGet>();
+            CreateMap<Item, ItemToGet>();
+            CreateMap<ProductToUpsert, Product>().AfterMap<MatchStoreFromRepository>();
+            CreateMap<ItemToUpsert, Item>().AfterMap<MatchItemsFromRepository>();
 
         }
     }
