@@ -2,6 +2,7 @@
 using GeekBurger.Products.Contract;
 using GeekBurger.Products.Model;
 using GeekBurger.Products.Repository;
+using GeekBurger.Products.Repository.Interface;
 
 namespace GeekBurger.Products {
     public class MatchStoreFromRepository : IMappingAction<ProductToUpsert, Product> 

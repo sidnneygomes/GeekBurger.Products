@@ -9,6 +9,4 @@ namespace GeekBurger.Products.Model
         public Guid StoreId { get; set; }
         public string Name { get; set; }
     }
-
-    }
 }

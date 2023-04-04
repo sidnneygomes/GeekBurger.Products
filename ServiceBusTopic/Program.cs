@@ -8,7 +8,7 @@ using ServiceBusConfiguration = ServiceBusTopic.ServiceBusConfiguration;
 const string TopicName = "ProductChangedTopic";
 IConfiguration _configuration;
 const string SubscriptionName = "paulista_store";
-
+string _storeId = string.Empty;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -67,7 +67,7 @@ app.MapRazorPages();
 
 app.Run();
 
-static async void ReceiveMessages(ServiceBusConfiguration serviceBusConfiguration)
+async void ReceiveMessages(ServiceBusConfiguration serviceBusConfiguration)
 {
     var subscriptionClient = new SubscriptionClient(serviceBusConfiguration.ConnectionString, TopicName, SubscriptionName);
 

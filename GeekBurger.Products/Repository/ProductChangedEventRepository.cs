@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GeekBurger.Products.Model;
+using GeekBurger.Products.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace GeekBurger.Products.Repository

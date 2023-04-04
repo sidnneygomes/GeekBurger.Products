@@ -13,5 +13,4 @@ namespace GeekBurger.Products.Model
         public Product Product { get; set; }
     }
 
-    }
 }

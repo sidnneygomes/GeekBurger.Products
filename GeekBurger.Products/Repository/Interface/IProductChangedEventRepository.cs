@@ -1,7 +1,7 @@
 ﻿using System;
 using GeekBurger.Products.Model;
 
-namespace GeekBurger.Products.Repository
+namespace GeekBurger.Products.Repository.Interface
 {
     public interface IProductChangedEventRepository
     {

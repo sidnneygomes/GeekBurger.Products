@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Newtonsoft.Json;
 using System.Text;
 using GeekBurger.Products.Contract;
+using GeekBurger.Products.Repository.Interface;
 
 namespace GeekBurger.Products.Service {
     public class ProductChangedService : IProductChangedService {

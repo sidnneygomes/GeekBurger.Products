@@ -2,7 +2,7 @@
 using GeekBurger.Products.Model;
 using System;
 
-namespace GeekBurger.Products.Repository
+namespace GeekBurger.Products.Repository.Interface
 {
     public interface IStoreRepository
     {

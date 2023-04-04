@@ -1,5 +1,6 @@
 ﻿using GeekBurger.Products.Contract;
 using GeekBurger.Products.Model;
+using GeekBurger.Products.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
